@@ -71,48 +71,69 @@ class Nature:
 class Pet:
     """ A List of pets from cat to fishes 
     there are kinds of pets you can choose
-    for seeing the list you should call Pet.animal_list()
+    for seeing the list you should call::
+         Pet.animal_list()
     if you choose any cat, dog, bird or fish outside of the list
-    it will raise an Error"""
+    it will raise an Error"""   
 
-    def __init__(self, cat=None, dog=None, bird=None, fish=None):
-        self.cat = cat
-        self.dog = dog
-        self.bird = bird
-        self.fish = fish
+    def cat(self):
+        pass
 
-        if cat: 
-            Living.animal_behaviors(cat)
-            
-        if dog:
-            Living.animal_behaviors(dog)
-        
-        if fish:
-            Living.animal_behaviors(fish)
+    def dog(self):
+        pass
 
-    @staticmethod
-    def animal_list(pet):
+    def bird(self):
+        pass
+
+    def fish(self):
+        pass
+
+
+    def animal_list(self, pet):
         """ A list of Available Cats, Dogs, Birds or fishes 
         you only can use this avalilable pets"""
         
-        birds = [
-                "kiwi",
-                "eagle",
-                "parret",
-                "crow",
-                "pigeon",
-                "owl"]
+        animals = {
+            "birds" : [
+                    "kiwi",
+                    "eagle",
+                    "parret",
+                    "crow",
+                    "pigeon",
+                    "owl"
+                    ],
 
-        if pet == "bird":
-            return birds
-        elif pet == "cat":
-            return cats
-        elif pet == "dog":
-            return dogs
-        elif pet == "fish":
-            return fihses
-        else:
-            raise ValueError("The Entered Pet is not added yet")
+            "cats" : [
+                    "abyssinian",
+                    "aegean",
+                    "balinese",
+                    "bengal",
+                    "birman",
+                    "bombay"
+                    ],
+
+            "dogs" : [
+                    "akbash",
+                    "bulldog",
+                    "malamute",
+                    "dingo",
+                    "Foxhound",
+                    "loepard"
+                    ],
+
+            "fishes" : [
+                    "goldfish",
+                    "guppy",
+                    "betta",
+                    "cherryBarb",
+                    "Anglefish"
+                    "discus"
+                    ]
+            }
+        for key in animals.keys():
+            if key == pet:
+                return animals[pet]
+
 
 def physicality(hardship, unit, weight, area):
     physica = {
